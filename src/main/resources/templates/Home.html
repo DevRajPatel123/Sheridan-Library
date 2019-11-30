@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link href="Images/favicon.ico" rel="icon">
+<link type="text/css" media="all" rel="stylesheet"
+   href="../static/bookCSS/myCSS.css" 
+   th:href="@{/bookCSS/myCSS.css}" />
+<title>Book Page</title>
+</head>
+<body>
+<form action="add" method="get">
+<center>
+<h1 id="headline">Sheridan Book Store</h1>
+<h3 id="sub">Select Campus</h3>
+<table border="1">
+<tr><button><a href="/davis">Davis Campus</a></button></tr><br><br>
+<tr><button><a href="/hmc">HMC Campus</a></button></tr><br><br>
+<tr><button><a href="/trafalgar">Trafalgar Campus</a></button></tr><br><br>
+</table><br><br>
+<button id="home"><a href="/">Home Page</a></button>
+</center>
+</form>
+</body>
+</html>

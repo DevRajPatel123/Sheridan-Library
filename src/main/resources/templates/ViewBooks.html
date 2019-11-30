@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="Images/favicon.ico" rel="icon">
+<link type="text/css" media="all" rel="stylesheet"
+   href="../static/bookCSS/myCSS.css" 
+   th:href="@{/bookCSS/myCSS.css}" />
+<title>View Books</title>
+</head>
+<body>
+<center>
+
+
+<h1 id="headline">View Books Davis Campus Library</h1>
+<table class="tbl">
+<tr>
+    
+	<th>Title</th>
+	<th>Author</th>
+	<th>Price</th>
+	<th>Quantity</th>
+	<th>Related Courses</th>
+</tr>
+	<tr th:each="bookEdition : ${bookEdition}">
+	
+	<td th:text="${bookEdition.title}"></td>
+	<td th:text="${bookEdition.author}"></td>
+	<td th:text="${bookEdition.price}"></td>
+	<td th:text="${bookEdition.quantity}"></td>
+	<td th:text="${bookEdition.relatedCourses}"></td>
+	<td><a href="" th:href="@{/edit/{id}(id=${bookEdition.id})}">EDIT</a></td>
+    <td><a href="" th:href="@{/delete/{id}(id=${bookEdition.id})}">DELETE</a></td> 
+	</tr>
+</table>
+
+<h1>View Books HMC Campus Library</h1>
+<table>
+<tr>
+    
+	<th>Title</th>
+	<th>Author</th>
+	<th>Price</th>
+	<th>Quantity</th>
+	<th>Related Courses</th>
+</tr>
+	<tr th:each="bookEditionhmc : ${bookEditionhmc}">
+	
+	<td th:text="${bookEditionhmc.title}"></td>
+	<td th:text="${bookEditionhmc.author}"></td>
+	<td th:text="${bookEditionhmc.price}"></td>
+	<td th:text="${bookEditionhmc.quantity}"></td>
+	<td th:text="${bookEditionhmc.relatedCourses}"></td>
+	<td><a href="" th:href="@{/edithmc/{id}(id=${bookEditionhmc.id})}">EDIT</a></td>
+    <td><a href="" th:href="@{/deletehmc/{id}(id=${bookEditionhmc.id})}">DELETE</a></td> 
+	</tr>
+</table>
+
+<h1>View Books Trafalgar Campus Library</h1>
+<table class="tbl">
+<tr>
+    
+	<th>Title</th>
+	<th>Author</th>
+	<th>Price</th>
+	<th>Quantity</th>
+	<th>Related Courses</th>
+</tr>
+	<tr th:each="bookEditiontra : ${bookEditiontra}">
+	
+	<td th:text="${bookEditiontra.title}"></td>
+	<td th:text="${bookEditiontra.author}"></td>
+	<td th:text="${bookEditiontra.price}"></td>
+	<td th:text="${bookEditiontra.quantity}"></td>
+	<td th:text="${bookEditiontra.relatedCourses}"></td>
+	<td><a href="" th:href="@{/edittra/{id}(id=${bookEditiontra.id})}">EDIT</a></td>
+    <td><a href="" th:href="@{/deletetra/{id}(id=${bookEditiontra.id})}">DELETE</a></td> 
+	</tr>
+</table>
+<button id="home"><a href="/">Home Page</a></button>
+</center>
+</body>
+</html>

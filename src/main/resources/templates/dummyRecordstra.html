@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="Images/favicon.ico" rel="icon">
+<link type="text/css" media="all" rel="stylesheet"
+   href="../static/bookCSS/myCSS.css" 
+   th:href="@{/bookCSS/myCSS.css}" />
+<title>Dummy Records</title>
+</head>
+<body>
+<center>
+<h1 id="headline">Dummy Records For Trafalgar Campus Library</h1>
+<table class="tbl">
+<tr>
+	<th>Title</th>
+	<th>Author</th>
+	<th>Price</th>
+	<th>Quantity</th>
+	<th>Related Courses</th>
+</tr>
+	<tr th:each="bookEditiontraD : ${bookEditiontraD}">
+	
+	<td th:text="${bookEditiontraD.title}"></td>
+	<td th:text="${bookEditiontraD.author}"></td>
+	<td th:text="${bookEditiontraD.price}"></td>
+	<td th:text="${bookEditiontraD.quantity}"></td>
+	<td th:text="${bookEditiontraD.relatedCourses}"></td>
+	</tr>
+</table>
+<button id="home"><a href="/">Home Page</a></button>
+</center>
+</body>
+</html>

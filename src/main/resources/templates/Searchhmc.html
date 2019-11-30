@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link href="Images/favicon.ico" rel="icon">
+<link type="text/css" media="all" rel="stylesheet"
+   href="../static/bookCSS/myCSS.css" 
+   th:href="@{/bookCSS/myCSS.css}" />
+<title>Search Page</title>
+</head>
+<body>
+<center>
+<h1 id="headline">Search Page</h1>
+<table class="tbl">
+  <tr> 
+	<td>Search by Id</td>
+	<form action="/searchIDhmc" method="get">
+	<td><input type="text" name="id" ></td>
+	 <td>
+	 <input type="submit" value="search"/>
+      </td>
+        </form>
+	</tr><br>
+	<tr> 
+	<td>Search by Title</td>
+	<form action="/searchTitlehmc" method="get">
+	<td><input type="text" name="title" ></td>
+	 <td>
+	 <input type="submit" value="search"/>
+      </td>
+        </form>
+	</tr><br>
+	<tr> 
+	<td>Search by Author</td>
+	<form action="searchAuthorhmc" method="get">
+	<td><input type="text" name="author" ></td>
+	 <td>
+	 <input type="submit" value="search"/>
+      </td>
+        </form>
+	</tr><br>
+	<tr> 
+	<td>Search by Course</td>
+	<form action="searchRelatedCourseshmc" method="get">
+	<td><input type="text" name="relatedCourses" ></td>
+	 <td>
+	 <input type="submit" value="search"/>
+      </td>
+        </form>
+	</tr><br>
+	<tr> 
+	<td>Search by Quantity Range</td>
+	<form action="searchQuantityhmc" method="get">
+	<td><input type="text" name="quantity" ></td>
+	 <td>
+	 <input type="submit" value="search"/>
+      </td>
+        </form>
+	</tr><br>
+</table>
+<hr>
+ <table class="tbl">
+<tr>
+    <th>ID</th>
+	<th>Title</th>
+	<th>Author</th>
+	<th>Price</th>
+	<th>Inventory Quantity</th>
+	<th>Related Courses</th>
+</tr><br>
+<tr>
+	<tr th:each="search : ${search}">
+	<td th:text="${search.id}"></td>
+	<td th:text="${search.title}"></td>
+	<td th:text="${search.author}"></td>
+	<td th:text="${search.price}"></td>
+	<td th:text="${search.quantity}"></td>
+	<td th:text="${search.relatedCourses}"></td>
+	</tr>
+	 </table>
+	 <button id="home"><a href="/">Home Page</a></button>
+</center>
+</body>
+</html>

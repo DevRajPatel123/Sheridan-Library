@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link href="Images/favicon.ico" rel="icon">
+<link type="text/css" media="all" rel="stylesheet"
+   href="../static/bookCSS/myCSS.css" 
+   th:href="@{/bookCSS/myCSS.css}" />
+<title>Edit Book</title>
+</head>
+<body>
+<h1 id="headline" style="text-align:center;">EDIT Book</h1>
+
+<center>
+<div id="form">
+<form action="/modifyhmc" method="GET"> 
+<!-- /modify because its relative to edit the url says /edit/modify after local host and not just /modify -->
+<input type="hidden" name="id" th:value="${bookEditionhmc.id}">
+Title:<input type="text" name="title" th:value="${bookEditionhmc.title}"><br>
+Author:<input type="text" name="author" th:value="${bookEditionhmc.author}"><br>
+Price:<input type="text" name="price" th:value="${bookEditionhmc.price}"><br>
+Quality:<input type="text" name="quantity" th:value="${bookEditionhmc.quantity}"><br>
+Related Courses:<input type="text" name="relatedCourses" th:value="${bookEditionhmc.relatedCourses}"><br>
+
+
+<input type="SUBMIT" value="Modify Book" />
+<button id="home"><a href="/">Home Page</a></button>
+</center>
+
+</form>
+</div>
+</body>
+</html>
